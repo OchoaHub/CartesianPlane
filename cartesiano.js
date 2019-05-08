@@ -6,7 +6,15 @@ let btn = document.querySelector('#add');
     var x = document.getElementById("X").value;
     var y = document.getElementById("Y").value;
 
-    var distance1 = point.distancia(x, y);
 
-   document.getElementById('distancia').innerHTML = `Distancia = ${distance1}`;
+    if (point.x == 0 && point.y == 0)
+    {
+        point.x = x;
+        point.y = y;
+    }
+    else {
+      var distance = point.distancia(x, y);
+      document.getElementById('distancia').innerHTML = distance;
+    }
+
   });
